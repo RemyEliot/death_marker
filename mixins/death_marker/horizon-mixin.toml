@@ -17,4 +17,6 @@ id = "tick-check"
 kind = "HEAD"
 target = "horizon_client::game::native_hooks::Game<'_>::native_tick"
 helper = "tick.rs"
-bindings = [{ name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" }]
+bindings = [
+    { name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" }
+]
