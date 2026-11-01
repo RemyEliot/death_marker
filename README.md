@@ -61,8 +61,8 @@ tools/audit/                      Rust AST comparison against the pristine expor
 To rename the example:
 
 1. Change Cargo package name/description and the manifest's mod ID/version.
-2. Rename `mixins/example_mod/` and update the Cargo `[lib].path`.
-3. Change the manifest module name `example_mod` and its reference in `break.rs`.
+2. Rename `mixins/death_marker` and update the Cargo `[lib].path`.
+3. Change the manifest module name `death_marker` and its reference in `break.rs`.
 4. Change the runtime log prefix, unit-test expectation and the native test filter
    `game::example_mod::tests` in `tools/horizon.py`.
 5. Run `cargo generate-lockfile --offline` after renaming the Cargo package and

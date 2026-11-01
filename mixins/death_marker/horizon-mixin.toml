@@ -1,5 +1,5 @@
 [mod]
-id = "example_mod"
+id = "death_marker"
 version = "0.1.0"
 priority = 100
 
@@ -9,12 +9,12 @@ horizon_revision = "ba6344a59cb9e755b730dcf02285fc0d33b97d3c"
 [[module]]
 id = "runtime"
 file = "crates/horizon-client/src/game.rs"
-name = "example_mod"
+name = "Death Marker"
 source = "runtime.rs"
 
 [[injection]]
-id = "before-break"
+id = "tick-check"
 kind = "HEAD"
-target = "horizon_client::game::Game<'_>::break_block"
-helper = "break.rs"
-bindings = [{ name = "pos", ty = "[i32;3]", value = "pos" }]
+target = "horizon_client::game::native_hooks::Game<'_>::native_tick"
+helper = "tick.rs"
+bindings = [{ name = "game", ty = "&mut crate::game::Game<'_>", value = "&mut *self" }]
